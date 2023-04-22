@@ -35,5 +35,12 @@ getLatest(){
 getLatest "chonos-ddnsmng" "https://github.com/chongroup/dpkg-chonos-ddnsmng/archive/refs/tags/ddnsmng-latest.tar.gz"
 
 cd public_html
-dpkg-scanpackages chonos/ /dev/null | gzip -9c > Packages.gz
-dpkg-scanpackages chonos/ /dev/null > Release
+mkdir -p dists/chonos/main/binary-i386
+
+dpkg-scanpackages chonos/ /dev/null | gzip -9c > dists/chonos/main/binary-i386/Packages.gz
+dpkg-scanpackages chonos/ /dev/null > dists/chonos/main/binary-i386/Release
+
+cd dists/chonos/main/
+ln -s binary-i386 binary-amd64
+ln -s binary-i386 binary-arm64
+ln -s binary-i386 binary-armhf

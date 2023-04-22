@@ -1,5 +1,6 @@
 # Packages
 src/*
 public_html/chonos/*
+public_html/dists/
 public_html/Packages.gz
 public_html/Release

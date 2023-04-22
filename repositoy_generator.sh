@@ -5,7 +5,7 @@ DPKG="public_html/chonos/"
 getLatest(){
     PACKAGE=$1
     LATEST_RELEASE_URL=$2
-    FILENAME=$(echo "$LATEST_RELEASE_URL" | cut -d'/' -f $(echo $(echo $LATEST_RELEASE_URL | grep -o '/' | wc -l)+1 | bc))
+    FILENAME=$(echo "$LATEST_RELEASE_URL" | rev | cut -d "/" -f 1 | rev)
     GITREPO=$(echo $LATEST_RELEASE_URL | cut -d "/" -f 5)
     RELEASE=`echo $FILENAME | cut -d "." -f 1`
 
@@ -40,7 +40,12 @@ mkdir -p dists/chonos/main/binary-i386
 dpkg-scanpackages chonos/ /dev/null | gzip -9c > dists/chonos/main/binary-i386/Packages.gz
 dpkg-scanpackages chonos/ /dev/null > dists/chonos/main/binary-i386/Release
 
-cd dists/chonos/main/
-ln -s binary-i386 binary-amd64
-ln -s binary-i386 binary-arm64
-ln -s binary-i386 binary-armhf
+mkdir -p dists/chonos/main/binary-amd64
+cp dists/chonos/main/binary-i386/* dists/chonos/main/binary-amd64/
+
+mkdir -p dists/chonos/main/binary-arm64
+cp dists/chonos/main/binary-i386/* dists/chonos/main/binary-arm64/
+
+mkdir -p dists/chonos/main/binary-armhf
+cp dists/chonos/main/binary-i386/* dists/chonos/main/binary-armhf/
+

@@ -32,7 +32,8 @@ getLatest(){
 }
 
 
-getLatest "chonos-ddnsmng" "https://github.com/chon-group/dpkg-chonos-ddnsmng/archive/refs/tags/ddnsmng-latest.tar.gz"
+getLatest "chonos-ddnsmng"  "https://github.com/chon-group/dpkg-chonos-ddnsmng/archive/refs/tags/ddnsmng-latest.tar.gz"
+getLatest "chonos-log"      "https://github.com/chon-group/dpkg-chonos-log/archive/refs/tags/log-latest.tar.gz"
 
 
 mkdir -p public_html/dists/chonos/main/binary-i386

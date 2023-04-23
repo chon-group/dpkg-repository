@@ -19,7 +19,7 @@ getLatest(){
         wget -P $SRC $LATEST_RELEASE_URL
     else
         local_modified_date=$(date -d "$(date -r $SRC$FILENAME '+%Y-%m-%d %H:%M:%S')" +%s)
-        remote_release_date=$(date -d "$(curl -s https://api.github.com/repos/chongroup/$GITREPO/releases/latest | grep "published_at" | head -n 1 | awk -F': ' '{print $2}' | tr -d '",')" +%s)
+        remote_release_date=$(date -d "$(curl -s https://api.github.com/repos/chon-group/$GITREPO/releases/latest | grep "published_at" | head -n 1 | awk -F': ' '{print $2}' | tr -d '",')" +%s)
         if [ "$remote_release_date" -gt "$local_modified_date" ]; then
             wget -P $SRC $LATEST_RELEASE_URL
         fi
@@ -32,11 +32,12 @@ getLatest(){
 }
 
 
-getLatest "chonos-ddnsmng" "https://github.com/chongroup/dpkg-chonos-ddnsmng/archive/refs/tags/ddnsmng-latest.tar.gz"
+getLatest "chonos-ddnsmng" "https://github.com/chon-group/dpkg-chonos-ddnsmng/archive/refs/tags/ddnsmng-latest.tar.gz"
+
+
+mkdir -p public_html/dists/chonos/main/binary-i386
 
 cd public_html
-mkdir -p dists/chonos/main/binary-i386
-
 dpkg-scanpackages chonos/ /dev/null | gzip -9c > dists/chonos/main/binary-i386/Packages.gz
 dpkg-scanpackages chonos/ /dev/null > dists/chonos/main/binary-i386/Release
 

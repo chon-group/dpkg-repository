@@ -36,6 +36,7 @@ getLatest(){
 getLatest "chonos-ddnsmng"  "https://github.com/chon-group/dpkg-chonos-ddnsmng/archive/refs/tags/ddnsmng-latest.tar.gz"
 getLatest "chonos-log"      "https://github.com/chon-group/dpkg-chonos-log/archive/refs/tags/log-latest.tar.gz"
 getLatest "chonos-task"     "https://github.com/chon-group/dpkg-chonos-task/archive/refs/tags/task-latest.tar.gz"
+getLatest "javino"          "https://github.com/chon-group/dpkg-javino/archive/refs/tags/javino-latest.tar.gz"
 
 
 mkdir -p public_html/dists/chonos/main/binary-i386

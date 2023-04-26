@@ -26,17 +26,18 @@ getLatest(){
     fi
     tar -xzf $SRC$FILENAME -C $SRC
    
-    VERSION=`egrep "Version" $SRC/$GITREPO-$RELEASE/DEBIAN/control | cut -d ":" -f 2 | xargs`
+    VERSION=`egrep "Version:" $SRC/$GITREPO-$RELEASE/DEBIAN/control | cut -d ":" -f 2 | xargs`
     mkdir -p $DPKG$PACKAGE
     rm $SRC$GITREPO-$RELEASE/*.md
     dpkg-deb -b $SRC$GITREPO-$RELEASE/ $DPKG$PACKAGE/$PACKAGE-$VERSION.deb
 }
 
 
-getLatest "chonos-ddnsmng"  "https://github.com/chon-group/dpkg-chonos-ddnsmng/archive/refs/tags/ddnsmng-latest.tar.gz"
-getLatest "chonos-log"      "https://github.com/chon-group/dpkg-chonos-log/archive/refs/tags/log-latest.tar.gz"
-getLatest "chonos-task"     "https://github.com/chon-group/dpkg-chonos-task/archive/refs/tags/task-latest.tar.gz"
-getLatest "javino"          "https://github.com/chon-group/dpkg-javino/archive/refs/tags/javino-latest.tar.gz"
+getLatest "chonos-ddnsmng"      "https://github.com/chon-group/dpkg-chonos-ddnsmng/archive/refs/tags/ddnsmng-latest.tar.gz"
+getLatest "chonos-log"          "https://github.com/chon-group/dpkg-chonos-log/archive/refs/tags/log-latest.tar.gz"
+getLatest "chonos-task"         "https://github.com/chon-group/dpkg-chonos-task/archive/refs/tags/task-latest.tar.gz"
+getLatest "javino"              "https://github.com/chon-group/dpkg-javino/archive/refs/tags/javino-latest.tar.gz"
+getLatest "chonos-embeddedmas"  "https://github.com/chon-group/dpkg-chonos-embeddedmas/archive/refs/tags/embeddedmas-latest.tar.gz"
 
 
 mkdir -p public_html/dists/chonos/main/binary-i386

@@ -40,6 +40,7 @@ getLatest "chonos-task"         "https://github.com/chon-group/dpkg-chonos-task/
 getLatest "javino"              "https://github.com/chon-group/dpkg-javino/archive/refs/tags/javino-latest.tar.gz"
 getLatest "chonos-embeddedmas"  "https://github.com/chon-group/dpkg-chonos-embeddedmas/archive/refs/tags/embeddedmas-latest.tar.gz"
 getLatest "chonos-firmwaremng"  "https://github.com/chon-group/dpkg-chonos-firmwaremng/archive/refs/tags/firmwaremng-latest.tar.gz"
+getLatest "chonos-sysconfig"    "https://github.com/chon-group/dpkg-chonos-sysconfig/archive/refs/tags/sysconfig-latest.tar.gz"
 
 mkdir -p public_html/dists/chonos/main/binary-i386
 

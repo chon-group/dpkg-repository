@@ -21,6 +21,7 @@ getLatest(){
         local_modified_date=$(date -d "$(date -r $SRC$FILENAME '+%Y-%m-%d %H:%M:%S')" +%s)
         remote_release_date=$(date -d "$(curl -s https://api.github.com/repos/chon-group/$GITREPO/releases/latest | grep "published_at" | head -n 1 | awk -F': ' '{print $2}' | tr -d '",')" +%s)
         if [ "$remote_release_date" -gt "$local_modified_date" ]; then
+            rm $SRC$FILENAME
             wget -P $SRC $LATEST_RELEASE_URL
         fi
     fi

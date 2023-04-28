@@ -42,12 +42,17 @@ getLatest "chonos-embeddedmas"  "https://github.com/chon-group/dpkg-chonos-embed
 getLatest "chonos-firmwaremng"  "https://github.com/chon-group/dpkg-chonos-firmwaremng/archive/refs/tags/firmwaremng-latest.tar.gz"
 getLatest "chonos-sysconfig"    "https://github.com/chon-group/dpkg-chonos-sysconfig/archive/refs/tags/sysconfig-latest.tar.gz"
 getLatest "chonide"             "https://github.com/chon-group/dpkg-chonide/archive/refs/tags/chonide-latest.tar.gz"
+getLatest "jason-cli"           "https://github.com/chon-group/dpkg-jason/archive/refs/tags/jasoncli-latest.tar.gz"
 
 mkdir -p public_html/dists/chonos/main/binary-i386
 
 cd public_html
+
 dpkg-scanpackages chonos/ /dev/null | gzip -9c > dists/chonos/main/binary-i386/Packages.gz
 dpkg-scanpackages chonos/ /dev/null > dists/chonos/main/binary-i386/Release
+
+mkdir -p dists/chonos/main/binary-all
+cp dists/chonos/main/binary-i386/* dists/chonos/main/binary-all/
 
 mkdir -p dists/chonos/main/binary-amd64
 cp dists/chonos/main/binary-i386/* dists/chonos/main/binary-amd64/
@@ -58,3 +63,4 @@ cp dists/chonos/main/binary-i386/* dists/chonos/main/binary-arm64/
 mkdir -p dists/chonos/main/binary-armhf
 cp dists/chonos/main/binary-i386/* dists/chonos/main/binary-armhf/
 
+apt-ftparchive release . > Release

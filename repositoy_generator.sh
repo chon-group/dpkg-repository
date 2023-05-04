@@ -34,15 +34,16 @@ getLatest(){
 }
 
 
-getLatest "chonos-ddnsmng"      "https://github.com/chon-group/dpkg-chonos-ddnsmng/archive/refs/tags/ddnsmng-latest.tar.gz"
-getLatest "chonos-log"          "https://github.com/chon-group/dpkg-chonos-log/archive/refs/tags/log-latest.tar.gz"
-getLatest "chonos-task"         "https://github.com/chon-group/dpkg-chonos-task/archive/refs/tags/task-latest.tar.gz"
-getLatest "javino"              "https://github.com/chon-group/dpkg-javino/archive/refs/tags/javino-latest.tar.gz"
-getLatest "chonos-embeddedmas"  "https://github.com/chon-group/dpkg-chonos-embeddedmas/archive/refs/tags/embeddedmas-latest.tar.gz"
-getLatest "chonos-firmwaremng"  "https://github.com/chon-group/dpkg-chonos-firmwaremng/archive/refs/tags/firmwaremng-latest.tar.gz"
-getLatest "chonos-sysconfig"    "https://github.com/chon-group/dpkg-chonos-sysconfig/archive/refs/tags/sysconfig-latest.tar.gz"
-getLatest "chonide"             "https://github.com/chon-group/dpkg-chonide/archive/refs/tags/chonide-latest.tar.gz"
-getLatest "jason-cli"           "https://github.com/chon-group/dpkg-jason/archive/refs/tags/jasoncli-latest.tar.gz"
+getLatest "chonos-ddnsmng"              "https://github.com/chon-group/dpkg-chonos-ddnsmng/archive/refs/tags/ddnsmng-latest.tar.gz"
+getLatest "chonos-log"                  "https://github.com/chon-group/dpkg-chonos-log/archive/refs/tags/log-latest.tar.gz"
+getLatest "chonos-task"                 "https://github.com/chon-group/dpkg-chonos-task/archive/refs/tags/task-latest.tar.gz"
+getLatest "javino"                      "https://github.com/chon-group/dpkg-javino/archive/refs/tags/javino-latest.tar.gz"
+getLatest "chonos-embeddedmas"          "https://github.com/chon-group/dpkg-chonos-embeddedmas/archive/refs/tags/embeddedmas-latest.tar.gz"
+getLatest "chonos-firmwaremng"          "https://github.com/chon-group/dpkg-chonos-firmwaremng/archive/refs/tags/firmwaremng-latest.tar.gz"
+getLatest "chonos-sysconfig"            "https://github.com/chon-group/dpkg-chonos-sysconfig/archive/refs/tags/sysconfig-latest.tar.gz"
+getLatest "chonide"                     "https://github.com/chon-group/dpkg-chonide/archive/refs/tags/chonide-latest.tar.gz"
+getLatest "jason-cli"                   "https://github.com/chon-group/dpkg-jason/archive/refs/tags/jasoncli-latest.tar.gz"
+getLatest "chonos-virtualbot-driver"    "https://github.com/chon-group/dpkg-virtualbot-driver/archive/refs/tags/virtualbot-driver-latest.tar.gz"
 
 mkdir -p public_html/dists/chonos/main/binary-i386
 

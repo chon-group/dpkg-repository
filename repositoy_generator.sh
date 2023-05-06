@@ -44,6 +44,8 @@ getLatest "chonos-sysconfig"            "https://github.com/chon-group/dpkg-chon
 getLatest "chonide"                     "https://github.com/chon-group/dpkg-chonide/archive/refs/tags/chonide-latest.tar.gz"
 getLatest "jason-cli"                   "https://github.com/chon-group/dpkg-jason/archive/refs/tags/jasoncli-latest.tar.gz"
 getLatest "chonos-virtualbot-driver"    "https://github.com/chon-group/dpkg-virtualbot-driver/archive/refs/tags/virtualbot-driver-latest.tar.gz"
+getLatest "chonos-network"              "https://github.com/chon-group/dpkg-chonos-network/archive/refs/tags/network-latest.tar.gz"
+getLatest "chonos"                      "https://github.com/chon-group/dkpg-chonos/archive/refs/tags/chonos-latest.tar.gz"
 
 mkdir -p public_html/dists/chonos/main/binary-i386
 

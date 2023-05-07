@@ -46,6 +46,7 @@ getLatest "jason-cli"                   "https://github.com/chon-group/dpkg-jaso
 getLatest "chonos-virtualbot-driver"    "https://github.com/chon-group/dpkg-virtualbot-driver/archive/refs/tags/virtualbot-driver-latest.tar.gz"
 getLatest "chonos-network"              "https://github.com/chon-group/dpkg-chonos-network/archive/refs/tags/network-latest.tar.gz"
 getLatest "chonos"                      "https://github.com/chon-group/dkpg-chonos/archive/refs/tags/chonos-latest.tar.gz"
+getLatest "chonos-neighbors"            "https://github.com/chon-group/dpkg-chonos-neighbors/archive/refs/tags/neighbors-latest.tar.gz"
 
 mkdir -p public_html/dists/chonos/main/binary-i386
 

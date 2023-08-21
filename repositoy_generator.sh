@@ -49,6 +49,7 @@ getLatest "chonos-network"              "https://github.com/chon-group/dpkg-chon
 getLatest "chonos"                      "https://github.com/chon-group/dkpg-chonos/archive/refs/tags/chonos-latest.tar.gz"
 getLatest "chonos-neighbors"            "https://github.com/chon-group/dpkg-chonos-neighbors/archive/refs/tags/neighbors-latest.tar.gz"
 getLatest "chonos-cert"                 "https://github.com/chon-group/dpkg-chonos-cert/archive/refs/tags/chonos-cert-latest.tar.gz"
+getLatest "contextnetserver-latest"     "https://github.com/chon-group/contextNetServer/archive/refs/tags/contextnetserver-latest.tar.gz"
 
 mkdir -p public_html/dists/chonos/main/binary-i386
 

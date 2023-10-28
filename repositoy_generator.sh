@@ -29,7 +29,8 @@ getLatest(){
    
     VERSION=`egrep "Version:" $SRC/$GITREPO-$RELEASE/DEBIAN/control | cut -d ":" -f 2 | xargs`
     mkdir -p $DPKG$PACKAGE
-    rm $SRC$GITREPO-$RELEASE/*.md
+    rm $SRC$GITREPO-$RELEASE/*.md 2> /dev/null
+    rm $SRC$GITREPO-$RELEASE/LICENCE 2> /dev/null
     dpkg-deb -b $SRC$GITREPO-$RELEASE/ $DPKG$PACKAGE/$PACKAGE-$VERSION.deb
 }
 

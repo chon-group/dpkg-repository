@@ -51,7 +51,7 @@ getLatest "chonos"                      "https://github.com/chon-group/dkpg-chon
 getLatest "chonos-neighbors"            "https://github.com/chon-group/dpkg-chonos-neighbors/archive/refs/tags/neighbors-latest.tar.gz"
 getLatest "chonos-cert"                 "https://github.com/chon-group/dpkg-chonos-cert/archive/refs/tags/cert-latest.tar.gz"
 getLatest "contextnetserver-latest"     "https://github.com/chon-group/contextNetServer/archive/refs/tags/contextnetserver-latest.tar.gz"
-getLatest "chonos-simulide"             "https://github.com/chon-group/dpkg-simulide/archive/refs/tags/simulide-latest.zip"
+getLatest "chonos-simulide"             "https://github.com/chon-group/dpkg-simulide/archive/refs/tags/simulide-latest.tar.gz"
 
 mkdir -p public_html/dists/chonos/main/binary-i386
 

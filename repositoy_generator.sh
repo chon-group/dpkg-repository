@@ -45,7 +45,7 @@ getLatest "chonos-sysconfig"            "https://github.com/chon-group/dpkg-chon
 getLatest "chonide"                     "https://github.com/chon-group/dpkg-chonide/archive/refs/tags/chonide-latest.tar.gz"
 getLatest "jason-cli"                   "https://github.com/chon-group/dpkg-jason/archive/refs/tags/jasoncli-latest.tar.gz"
 getLatest "jacamo-cli"                  "https://github.com/chon-group/dpkg-jacamo/archive/refs/tags/jacamocli-latest.tar.gz"
-getLatest "chonos-serial-port-emulator" "https://github.com/chon-group/dpkg-virtualport-driver/archive/refs/tags/dpkg-virtualport-driver-latest.tar.gz"
+getLatest "chonos-serial-port-emulator" "https://github.com/chon-group/dpkg-virtualport-driver/archive/refs/tags/virtualbot-latest.tar.gz"
 getLatest "chonos-network"              "https://github.com/chon-group/dpkg-chonos-network/archive/refs/tags/network-latest.tar.gz"
 getLatest "chonos"                      "https://github.com/chon-group/dkpg-chonos/archive/refs/tags/chonos-latest.tar.gz"
 getLatest "chonos-neighbors"            "https://github.com/chon-group/dpkg-chonos-neighbors/archive/refs/tags/neighbors-latest.tar.gz"

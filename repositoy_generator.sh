@@ -37,7 +37,7 @@ getLatest(){
     VERSION=`egrep "Version:" $SRC/$GITREPO-$RELEASE/DEBIAN/control | cut -d ":" -f 2 | xargs`
     mkdir -p $DPKG
     rm $SRC$GITREPO-$RELEASE/*.md 2> /dev/null
-    rm $SRC$GITREPO-$RELEASE/LICENCE 2> /dev/null
+    rm $SRC$GITREPO-$RELEASE/LICENSE 2> /dev/null
     dpkg-deb -b $SRC$GITREPO-$RELEASE/ $DPKG$PACKAGE-$VERSION.deb
 }
 
@@ -67,5 +67,5 @@ cd public_html
 dpkg-scanpackages chonos/ > dists/chonos/main/binary-all/Release
 cat dists/chonos/main/binary-all/Release | gzip -9c > dists/chonos/main/binary-all/Packages.gz
 
-apt-ftparchive release . > Release
+#apt-ftparchive release . > Release
 cd ../

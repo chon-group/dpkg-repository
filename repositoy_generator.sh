@@ -14,31 +14,20 @@ getLatest(){
     LATEST_RELEASE_URL="https://github.com/chon-group/$GITNAME/archive/refs/tags/$TAG_NAME.tar.gz"
     FILENAME=$(echo "$LATEST_RELEASE_URL" | rev | cut -d "/" -f 1 | rev)
     GITREPO=$(echo $LATEST_RELEASE_URL | cut -d "/" -f 5)
-    RELEASE=`echo $FILENAME | cut -d "." -f 1`
 
-    if [ ! -d $SRC ]; then
-        mkdir $SRC
-    elif [ -d $SRC$GITREPO-$RELEASE ]; then
-        rm -rf $SRC$GITREPO-$RELEASE
-    fi
-
-    if [ ! -f $SRC$FILENAME ]; then
-        wget -P $SRC $LATEST_RELEASE_URL
+    if [ ! -f $SRC$GITREPO/$FILENAME ]; then
+        mkdir -p $SRC$GITREPO
+        wget -P $SRC$GITREPO $LATEST_RELEASE_URL
     else
-        local_modified_date=$(date -d "$(date -r $SRC$FILENAME '+%Y-%m-%d %H:%M:%S')" +%s)
-        remote_release_date=$(date -d "$(cat /tmp/$PACKAGE.latest | grep "published_at" | head -n 1 | awk -F': ' '{print $2}' | tr -d '",')" +%s)
-        if [ "$remote_release_date" -gt "$local_modified_date" ]; then
-            rm $SRC$FILENAME
-            wget -P $SRC $LATEST_RELEASE_URL
-        fi
+        rm -rf $SRC$GITREPO$TAG_NAME
     fi
-    tar -xzf $SRC$FILENAME -C $SRC
-   
-    VERSION=`egrep "Version:" $SRC/$GITREPO-$RELEASE/DEBIAN/control | cut -d ":" -f 2 | xargs`
+    tar -xzf $SRC$GITREPO/$FILENAME -C $SRC$GITREPO
+
+    VERSION=`egrep "Version:" $SRC$GITREPO/$GITREPO-$TAG_NAME/DEBIAN/control | cut -d ":" -f 2 | xargs`
     mkdir -p $DPKG
-    rm $SRC$GITREPO-$RELEASE/*.md 2> /dev/null
-    rm $SRC$GITREPO-$RELEASE/LICENSE 2> /dev/null
-    dpkg-deb -b $SRC$GITREPO-$RELEASE/ $DPKG$PACKAGE-$VERSION.deb
+    rm $SRC$GITREPO/$GITREPO-$TAG_NAME/*.md 2> /dev/null
+    rm $SRC$GITREPO/$GITREPO-$TAG_NAME/LICENSE 2> /dev/null
+    dpkg-deb -b $SRC$GITREPO/$GITREPO-$TAG_NAME/ $DPKG$PACKAGE-$VERSION.deb
 }
 
 
@@ -67,5 +56,4 @@ cd public_html
 dpkg-scanpackages chonos/ > dists/chonos/main/binary-all/Release
 cat dists/chonos/main/binary-all/Release | gzip -9c > dists/chonos/main/binary-all/Packages.gz
 
-#apt-ftparchive release . > Release
 cd ../
